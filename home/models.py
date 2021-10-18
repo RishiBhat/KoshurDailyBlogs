@@ -1,5 +1,8 @@
 from django.db import models
 from django.db.models.fields import EmailField
+from django.http import FileResponse
+from reportlab.pdfgen import canvas
+
 
 # Create your models here.
 
@@ -16,11 +19,8 @@ class Contact(models.Model):
     content= models.TextField()
     timestamp= models.TimeField (auto_now_add=True, blank=True)
 
-
     def __str__ (self):
         return self.name
-
-
 
 
 

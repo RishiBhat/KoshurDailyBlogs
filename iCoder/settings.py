@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os   
 from django.contrib.messages import constants as messages
 
+from pathlib import Path
 
 
 
@@ -40,8 +41,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+
     
+INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
@@ -50,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
 ]
 
 MIDDLEWARE = [
@@ -131,6 +135,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR,  "static"),
+]
+
+
 
 
 MESSAGE_TAGS={
